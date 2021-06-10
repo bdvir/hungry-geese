@@ -176,8 +176,8 @@ class Game(AbstractGame):
         # observation, reward, done, _ = self.env.step(action)
 
         self.env.step([action, "NORTH", "NORTH", "NORTH"])
-        observation, reward, done = make_input(self.env.state[0]['observation']), self.env.state[0]['reward'], self.env.done
-        print(observation.shape)
+        obses.append(self.env.state[0]['observation'])
+        observation, reward, done = make_input(obses), self.env.state[0]['reward'], self.env.done
         # agent(env.state[0]['observation'], env.configuration)
         # done = env.done
         # for i in range(5):

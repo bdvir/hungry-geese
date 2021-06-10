@@ -279,10 +279,11 @@ class MCTS:
         else:
             root = Node(0)
             observation = (
-                torch.tensor(observation)
-                .float()
-                .unsqueeze(0)
-                .to(next(model.parameters()).device)
+#                 torch.tensor(observation)
+#                 .float()
+#                 .unsqueeze(0)
+#                 .to(next(model.parameters()).device)
+            torch.from_numpy(observation).float().unsqueeze(0).to(next(model.parameters()).device)
             )
             (
                 root_predicted_value,

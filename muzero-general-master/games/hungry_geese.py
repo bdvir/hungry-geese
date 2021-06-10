@@ -136,7 +136,7 @@ class Game(AbstractGame):
         self.env.reset(4)
 
     def make_input(obses):
-        b = np.zeros((17, 7 * 11), dtype=np.float32)
+        b = np.zeros((17, 7 * 11))
         obs = obses[-1]
 
         for p, pos_list in enumerate(obs['geese']):

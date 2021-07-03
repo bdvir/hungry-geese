@@ -278,7 +278,7 @@ class MCTS:
             root_predicted_value = None
         else:
             root = Node(0)
-            print(type(observation))
+#             print(type(observation))
             observation = (
                 torch.tensor(observation)
                 .float()

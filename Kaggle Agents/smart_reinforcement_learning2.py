@@ -91,6 +91,8 @@ def make_input(obses):
 weights = torch.load('models/latest.pth')
 PARAM = base64.b64encode(bz2.compress(pickle.dumps(weights)))
 state_dict = pickle.loads(bz2.decompress(base64.b64decode(PARAM)))
+
+model = GeeseNet()
 model.load_state_dict(state_dict)
 model.eval()
 
